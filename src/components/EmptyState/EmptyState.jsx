@@ -1,4 +1,5 @@
 import React from "react";
+import BtCleanFIlter from "../BtCleanFilter/BtCleanFIlter";
 
 const EmptyState = ({ setFiltros }) => {
   return (
