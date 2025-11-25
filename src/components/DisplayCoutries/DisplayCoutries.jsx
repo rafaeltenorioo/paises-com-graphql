@@ -3,7 +3,7 @@ import { useQuery } from "@apollo/client/react";
 import { useState } from "react";
 import BarraFiltros from "../BarraFiltros";
 import EmptyState from "../EmptyState/EmptyState";
-import NameFlag from "../Card/Name&Flag/Name&Flag";
+import NameFlag from "../Card/NameFlag/Name&Flag";
 import Capital from "../Card/Capital/Capital";
 import Continents from "../Card/Continents/Continents";
 import Currency from "../Card/Currency/Currency";

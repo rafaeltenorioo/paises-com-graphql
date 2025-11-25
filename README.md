@@ -53,8 +53,8 @@ src/
 1. **Clonar o repositório:**
 
 ```bash
-git clone [https://github.com/SEU_USUARIO/NOME_DO_REPO.git](https://github.com/SEU_USUARIO/NOME_DO_REPO.git)
-cd NOME_DO_REPO
+git clone [https://github.com/rafaeltenorioo/NOME_DO_REPO.git](https://github.com/rafaeltenorioo/paises-com-graphql.git)
+cd paises-com-graphql
 ```
 
 2. **Instalar dependências:**
