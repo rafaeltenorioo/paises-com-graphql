@@ -80,5 +80,3 @@ Diferenças práticas entre REST e GraphQL: Entendimento prático sobre otimiza�
 Apollo Client: Gerenciamento de variáveis reativas e cache dentro de queries.
 
 Tailwind CSS v4: Configuração e uso da versão mais recente em ambiente Vite
-
-### Desenvolvido com 💙 por Rafael Tenório
