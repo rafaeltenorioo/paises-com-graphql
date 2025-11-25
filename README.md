@@ -5,6 +5,12 @@
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38bdf8?logo=tailwindcss)
 ![Vite](https://img.shields.io/badge/Vite-Bundler-646cff?logo=vite)
 
+<br />
+<div align="center">
+  <img src="./public/video_de_apresentacao.gif" alt="Demonstração do Explorador de Mundos" width="100%">
+</div>
+<br />
+
 ## 📖 Sobre o Projeto
 
 **Países com GraphQL** é uma aplicação web interativa que permite aos usuários explorar informações detalhadas sobre países de todo o mundo. A diferença fundamental deste projeto para aplicações REST tradicionais é o uso de **GraphQL**, que permite consultar dados de forma extremamente eficiente, solicitando apenas as informações necessárias para a interface.
@@ -20,6 +26,12 @@ A aplicação implementa um sistema de filtragem robusto, design responsivo e tr
 - **Design Modular:** Arquitetura de componentes atômicos (`Cards`, `Badges`) para facilitar a escalabilidade e manutenção.
 - **Feedback de UI:** Estados personalizados de Carregamento (Loading Spinners) e Tratamento de Erros visuais amigáveis.
 - **Responsive Design:** Layout em Grid adaptativo construído com a nova versão do **Tailwind CSS v4**.
+
+### 🎨 Decisões de UI/UX
+
+- **Renderização de Bandeiras:**
+  A aplicação utiliza a **FlagCDN** para exibir as bandeiras dos países.
+  > _Motivo:_ A API original fornece emojis (ex: 🇧🇷). No entanto, o **Windows** não suporta nativamente a renderização de emojis de bandeiras, exibindo apenas as siglas (ex: "BR"). A implementação de imagens via CDN garante uma experiência visual consistente e rica para usuários de todos os sistemas operacionais (Windows, Linux, macOS).
 
 ## 🚀 Tecnologias Utilizadas
 
