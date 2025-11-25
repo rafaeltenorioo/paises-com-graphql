@@ -18,7 +18,7 @@ const GET_COUNTRIES = gql`
       name
       capital
       currencies
-      emoji
+
       continent {
         name
       }
@@ -103,7 +103,7 @@ export const DisplayCountries = () => {
 
       <NumberCountries data={data} />
       {data.countries.length > 0 ? (
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 max-h-screen overflow-y-auto">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  max-h-screen overflow-y-auto">
           {data.countries.map((pais) => (
             <div
               key={pais.code}
