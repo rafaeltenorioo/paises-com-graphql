@@ -92,7 +92,7 @@ export const DisplayCountries = () => {
       <div className="flex flex-col border-b border-slate-200 pb-4">
         <div className="flex flex-col gap-5 justify-between">
           <div className="flex justify-center">
-            <h1 className="text-4xl font-bold text-blue-100 items-center">
+            <h1 className="text-4xl font-bold text-blue-100 items-center ">
               Explore as nações com base nos seus filtros
             </h1>
           </div>

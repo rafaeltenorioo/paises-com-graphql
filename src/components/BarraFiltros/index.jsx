@@ -6,8 +6,8 @@ import NumberCountries from "../NumberCountries/NumberCountries";
 
 const BarraFiltros = ({ filtros, setFiltros }) => {
   return (
-    <form className="pt-10 md:pt-16 lg:flex lg:justify-between">
-      <div className="gap-2 grid grid-cols-1 sm:flex">
+    <form className="pt-10 md:pt-16 md:flex md:justify-between sm:gap-5">
+      <div className="gap-2 flex flex-col justify-center items-center sm:flex-row sm:justify-items-start">
         {/* Filtro Continente */}
         <FilterContinent filtros={filtros} setFiltros={setFiltros} />
 
@@ -22,7 +22,7 @@ const BarraFiltros = ({ filtros, setFiltros }) => {
         </div>
       </div>
 
-      <div className="hidden items-end mt-2 sm:flex sm:justify-items-start lg:justify-end">
+      <div className="hidden items-end mt-2 sm:flex sm:justify-items-start md:justify-end sm:flex-wrap">
         <BtCleanFIlter setFiltros={setFiltros} />
       </div>
     </form>

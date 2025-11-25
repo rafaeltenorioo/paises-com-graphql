@@ -1,6 +1,6 @@
 const NameFlag = ({ pais }) => {
   return (
-    <div className="flex items-center gap-10 p-4">
+    <div className="flex flex-wrap items-center justify-center gap-10 p-4">
       {/* Usamos o FlagCDN.
          O código do país vem em maiúsculo (ex: "BR"), mas a URL precisa ser minúscula (.toLowerCase()).
          Usamos w40 para pegar uma imagem leve de 40px de largura.
