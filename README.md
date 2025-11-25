@@ -53,7 +53,7 @@ src/
 1. **Clonar o repositório:**
 
 ```bash
-git clone [https://github.com/rafaeltenorioo/NOME_DO_REPO.git](https://github.com/rafaeltenorioo/paises-com-graphql.git)
+git clone [https://github.com/rafaeltenorioo/paises-com-graphql.git](https://github.com/rafaeltenorioo/paises-com-graphql.git)
 cd paises-com-graphql
 ```
 
