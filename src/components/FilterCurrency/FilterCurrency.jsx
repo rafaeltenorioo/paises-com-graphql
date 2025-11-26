@@ -17,6 +17,7 @@ const FilterCurrency = ({ filtros, setFiltros }) => {
     <fieldset>
       <legend className="font-bold text-blue-100 uppercase mb-1">Moeda</legend>
       <select
+        aria-label="currency"
         name="currency"
         id="currency"
         onChange={(e) => HandleChange(e, setFiltros, "regex")}

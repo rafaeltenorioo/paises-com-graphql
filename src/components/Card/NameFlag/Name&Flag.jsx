@@ -11,6 +11,8 @@ const NameFlag = ({ pais }) => {
         width="80"
         height="60"
         alt={`Bandeira de ${pais.name}`}
+        loading="lazy"
+        decoding="async"
       />
 
       <h2 className="font-bold text-2xl text-black">{pais.name}</h2>

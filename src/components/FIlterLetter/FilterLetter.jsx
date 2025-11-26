@@ -39,6 +39,7 @@ const FilterLetter = ({ filtros, setFiltros }) => {
       </legend>
       <div>
         <select
+          aria-label="name"
           name="name"
           id="name"
           onChange={(e) => HandleChange(e, setFiltros, "regex")}

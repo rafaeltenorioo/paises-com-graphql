@@ -19,6 +19,7 @@ const FilterContinent = ({ filtros, setFiltros }) => {
         Continente
       </legend>
       <select
+        aria-label="continente"
         name="continent"
         id="continent"
         onChange={(e) => HandleChange(e, setFiltros, "eq")}

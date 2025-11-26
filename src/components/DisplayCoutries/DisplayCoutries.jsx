@@ -10,6 +10,8 @@ import Currency from "../Card/Currency/Currency";
 import Languages from "../Card/Languages/Languages";
 import Native from "../Card/Native/Native";
 import NumberCountries from "../NumberCountries/NumberCountries";
+import CardCompleted from "../Card/CardCompleted/CardCompleted";
+import SkeletonCard from "../Card/SkeletonCard";
 
 const GET_COUNTRIES = gql`
   query Countries($filter: CountryFilterInput) {
@@ -38,23 +40,6 @@ export const DisplayCountries = () => {
     variables: { filter: filtros },
   });
 
-  if (loading) {
-    return (
-      <div className="flex flex-col items-center justify-center min-h-[50vh] space-y-4 animate-pulse">
-        {/* Spinner personalizado */}
-        <div className="relative flex items-center justify-center">
-          {/* Círculo externo*/}
-          <div className="w-16 h-16 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin"></div>
-
-          <div className="absolute text-2xl">🌍</div>
-        </div>
-
-        <p className="text-lg font-medium text-slate-600 tracking-wide">
-          Viajando pelos dados globais...
-        </p>
-      </div>
-    );
-  }
   if (error) {
     return (
       <div className="flex items-center justify-center min-h-[50vh]">
@@ -86,6 +71,8 @@ export const DisplayCountries = () => {
     );
   }
 
+  const skeletons = Array(10).fill(0);
+
   return (
     <section className="flex flex-col gap-3  min-h-screen py-5 px-4 md:px-8">
       {/* Cabeçalho de Resultados */}
@@ -97,40 +84,29 @@ export const DisplayCountries = () => {
             </h1>
           </div>
 
-          <BarraFiltros filtros={filtros} setFiltros={setFiltros} data={data} />
+          <BarraFiltros filtros={filtros} setFiltros={setFiltros} />
         </div>
       </div>
 
       <NumberCountries data={data} />
-      {data.countries.length > 0 ? (
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  max-h-screen overflow-y-auto">
-          {data.countries.map((pais) => (
-            <div
-              key={pais.code}
-              className="group relative bg-white/20 border border-slate-200 rounded-xl shadow-sm hover:shadow-xl hover:border-blue-300 hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden mr-3 mb-3"
-            >
-              {/* Topo do Card: Bandeira e Nome */}
-              <NameFlag pais={pais} />
 
-              {/* Corpo do Card: Detalhes */}
-              <div className="p-5 text-sm text-slate-600 space-y-3 grow bg-white">
-                <Capital pais={pais} />
-
-                <Continents pais={pais} />
-
-                <Currency pais={pais} />
-
-                <Languages pais={pais} />
-
-                <Native pais={pais} />
-              </div>
-            </div>
-          ))}
-        </div>
-      ) : (
-        // Estado Vazio
-        <EmptyState setFiltros={setFiltros} />
-      )}
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  max-h-screen overflow-y-auto">
+        {loading ? (
+          // Se carregando... mapeio o array falso
+          skeletons.map((_, index) => <SkeletonCard key={index} />)
+        ) : // Se está carregado...
+        data?.countries.length > 0 ? (
+          // E os dados estão prontos... mapeamos na API
+          data.countries.map((pais) => (
+            <CardCompleted pais={pais} key={pais.code} />
+          ))
+        ) : (
+          // Se ñ está carregando e ñ há dados... busca vazia
+          <div className="col-span-full">
+            <EmptyState setFiltros={setFiltros} />
+          </div>
+        )}
+      </div>
     </section>
   );
 };

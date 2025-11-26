@@ -1,15 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 body {
   margin: 0;
   box-sizing: border-box;
-  background-image: url("./assets/globo-com-pino.jpg");
+
+  background-color: #f3f4f6;
+  background-image: url("/bg-terra.webp");
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
   min-height: 100vh;
+  font-display: swap;
 }
